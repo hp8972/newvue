@@ -1,6 +1,8 @@
 # newvue
 
 > A Vue.js project
+模仿vuex简单案例
+部分样式模仿elment.ui
 
 ## Build Setup
 
