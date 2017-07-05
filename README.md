@@ -2,7 +2,7 @@
 
 > A Vue.js project
 
-模仿vuex简单案例
+模仿vuex简单案例，其中运用了vue-router，fetch，vuex
 
 部分样式模仿elment.ui
 
