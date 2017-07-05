@@ -5,19 +5,19 @@
 		  	<div class="grid-content bg-purple"  v-for="(item,index) in list" :key="index" @click="select(item.No)">
 		  		<h1>{{item.name}}</h1>
 		  	</div>
-		  </el-col>		  
+		  </el-col>
 		</el-row>
 	</div>
-	
+
 </template>
 
 <script>
-	
+
 import {mapState,mapGetters,mapActions,mapMutations} from 'vuex'
 	export default {
 	    data() {
 	      return {
-	        
+
 	      };
 	    },
 	    computed: {
@@ -27,12 +27,12 @@ import {mapState,mapGetters,mapActions,mapMutations} from 'vuex'
 		 },
 	    methods: {
 	    	select(No){
-	    		this.$router.replace({ path: "listdetail",query:{
+	    		this.$router.push({ path: "listdetail",query:{
 	    			id:No,
 //					地址栏传参，商品id（名字可以随便写）
 	    		}});
 	    	}
-	    	
+
 	    }
 	  }
 

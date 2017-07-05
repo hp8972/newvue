@@ -1,17 +1,17 @@
 <template>
 	<div id="a">
-		<a class="back" href="javascript:;" @click="back">返回</a>	
+		<a class="back" href="javascript:;" @click="back">返回</a>
    		<h2>详情页</h2>
    		<el-row :gutter="20">
 		  <el-col :span="24">
 		  	<div class="grid-content bg-purple"  v-for="(item,index) in detail" :key="index">
 		  		<h3>{{index+1}}、{{item.medium_title}}</h3>
 		  	</div>
-		  		
-		  </el-col>		  
+
+		  </el-col>
 		</el-row>
 	</div>
-	
+
 </template>
 
 <script>
@@ -20,22 +20,26 @@ import Element from 'element-ui'
 	export default {
 	    data() {
 	      return {
-	        
+
 	      };
 	    },
 	    created(a){
 	    	this.$store.dispatch('detail',this.$route.query.id)
 	    	//调用store的action方法进行请求数据
+	    	//    dispatch可以调用action种的方法，然后在action方法中进行数据请求，然后把数据保存到state中
+
 	    },
 	    computed: {
-	    
+//	        将新的数据进行渲染页面
+//	        或者computed:mapState(["detail"])
 		    ...mapState([
 		    	"detail"
 			])
 		 },
 	    methods: {
+//	        点击返回键回到主页面
 	    	back(){
-	    		this.$router.replace({ path: "/"});
+	    		this.$router.push({ path: "/"});
 	    	},
 	    }
 	  }
